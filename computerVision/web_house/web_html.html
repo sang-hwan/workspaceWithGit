@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="web_css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <ul>
+                <li class="header_menu"><a href="">
+                    <div class="logo-div"></div>
+                </a></li>
+                <li class="header_menu"><a href="">
+                    <span>아파트</span>
+                    <span class="small">매매/전월세/신축분양</span>
+                </a></li>
+                <li class="header_menu"><a href="">
+                    <span>빌라, 투룸+</span>
+                    <span class="small">신축분양/매매/전월세</span>
+                </a></li>
+                <li class="header_menu"><a href="">
+                    <span>원룸</span>
+                    <span class="small">전월세</span>
+                </a></li>
+                <li class="header_menu"><a href="">
+                    <span>오피스텔</span>
+                    <span class="small">도시형생활주택/전월세</span>
+                </a></li>
+                <li class="header_menu"><a href="">
+                    <span>창업/사무실</span>
+                    <span class="small">임대/매매</span>
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        window.onload = function(){
+            document.getElementById('address').addEventListener('keyup', function(e){
+                if(e.keyCode===13){
+                    e.preventDefault();
+                    document.getElementById('btn').click();
+                }
+            });
+        }
+
+        function search(){
+            var address = document.getElementById('address').value;
+            var url = "map_html.html?"+address;
+            return url;
+        }
+    </script>
+
+    <div class="main">
+        <div class="search">
+            <input type="text" name="address" id="address" placeholder="원하시는 지역명을 입력해주세요"/>
+            <button id="btn" onclick="document.location.href=search()"></button>
+        </div>
+    </div>
+</body>
+</html>
