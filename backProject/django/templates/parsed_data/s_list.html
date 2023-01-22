@@ -1,0 +1,10 @@
+{% if s_list %}
+    <ul>
+    {% for s in s_list %}
+        {% comment %} <li><a href="/parsed_data/{{ s.id }}/">{{ s.title }}</a></li> {% endcomment %}
+        <li><a href="{% url 'parsed_data:s_detail' s.id %}">{{ s.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>s_list가 없습니다.</p>
+{% endif %}

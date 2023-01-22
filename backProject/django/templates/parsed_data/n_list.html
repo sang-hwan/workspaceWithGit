@@ -1,0 +1,9 @@
+{% if n_list %}
+    <ul>
+    {% for n in n_list %}
+        <li><a href="{% url 'parsed_data:n_detail' n.id %}">{{ n.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>n_list가 없습니다.</p>
+{% endif %}
