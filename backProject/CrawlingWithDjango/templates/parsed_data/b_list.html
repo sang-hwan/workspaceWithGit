@@ -1,9 +1,0 @@
-{% if b_list %}
-    <ul>
-    {% for b in b_list %}
-        <li><a href="{% url 'parsed_data:b_detail' b.id %}">{{ b.title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>b_list가 없습니다.</p>
-{% endif %}
